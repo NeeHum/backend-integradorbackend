@@ -298,3 +298,14 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Servidor backend corriendo en el puerto ${PORT}`);
 });
+
+// Ruta para obtener la lista de usuarios desde la base de datos
+app.get("/api/usuarios", async (req, res) => {
+  try {
+    const usuarios = await User.find(); // Utiliza el modelo de usuarios
+    res.status(200).json(usuarios);
+  } catch (error) {
+    console.error("Error al obtener la lista de usuarios:", error);
+    res.status(500).json({ error: "Error al obtener la lista de usuarios" });
+  }
+});
