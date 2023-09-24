@@ -18,7 +18,7 @@ app.use("/assets/img", express.static(imagePath));
 
 // Configurar CORS para permitir solicitudes desde cualquier origen
 app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "http://localhost:3000"); // Reemplaza con la URL de tu frontend
+  res.header("Access-Control-Allow-Origin", "https://integrador-backend.vercel.app/"); // Reemplaza con la URL de tu frontend
   res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
