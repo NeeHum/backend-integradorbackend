@@ -1,15 +1,18 @@
 {
-    "builds": [
-      {
-        "src": "index.mjs",
-        "use": "@vercel/node"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/api/(.*)",
-        "dest": "index.mjs"
-      }
-    ]
-  }
-  
+  "builds": [
+    {
+      "src": "index.mjs",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "index.mjs"
+    },
+    {
+      "src": "/assets/img/(.*)",
+      "dest": "assets/img/$1"
+    }
+  ]
+}
