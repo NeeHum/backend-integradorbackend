@@ -1,29 +1,18 @@
 {
+  "builds": [
+    {
+      "src": "index.mjs",
+      "use": "@vercel/node"
+    }
+  ],
   "routes": [
     {
-      "src": "/api/usuarios",
-      "dest": "/api/usuarios.js"
-    },
-    {
-      "src": "/api/login",
-      "dest": "/api/login.js"
-    },
-    {
-      "src": "/api/productos",
-      "dest": "/api/productos.js"
+      "src": "/api/(.*)",
+      "dest": "index.mjs"
     },
     {
       "src": "/assets/img/(.*)",
-      "dest": "/assets/img/$1"
-    },
-    {
-      "handle": "filesystem",
-      "src": "/assets/img/(.*)",
-      "dest": "/api/assets/img/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/"
+      "dest": "assets/img/$1"
     }
   ]
 }
