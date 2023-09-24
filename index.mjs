@@ -304,3 +304,34 @@ app.get("/api/usuarios", async (req, res) => {
     res.status(500).json({ error: "Error al obtener la lista de usuarios" });
   }
 });
+
+// Ruta para crear un producto
+app.post("/api/productos", async (req, res) => {
+  try {
+    const {
+      id,
+      titulo,
+      imagen,
+      categoria,
+      precio
+    } = req.body;
+
+    // Crear un nuevo producto utilizando el modelo
+    const newProduct = new Product({
+      id,
+      titulo,
+      imagen,
+      categoria,
+      precio
+    });
+
+    // Guardar el producto en la base de datos
+    const savedProduct = await newProduct.save();
+
+    res.status(201).json(savedProduct);
+  } catch (error) {
+    console.error("Error al crear un producto:", error);
+    res.status(500).json({ error: "Error al crear un producto" });
+  }
+});
+
