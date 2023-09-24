@@ -16,7 +16,7 @@ app.use("/assets/img", express.static(imagePath));
 
 // Configurar CORS para permitir solicitudes desde cualquier origen
 app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "http://localhost:3000"); // Reemplaza con la URL de tu frontend
+  res.header("Access-Control-Allow-Origin", "https://integrador-backend.vercel.app/"); // Reemplaza con la URL de tu frontend
   res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
@@ -46,7 +46,7 @@ const initialProducts = [
   {
     id: "CS",
     titulo: "CS: Global Offensive",
-    imagen: "http://localhost:5000/assets/img/FPS/01.jpg",
+    imagen: "https://backend-integradorbackend.vercel.app/assets/img/FPS/01.jpg",
     categoria: {
       nombre: "FPS",
       id: "FPS",
@@ -56,7 +56,7 @@ const initialProducts = [
   {
     id: "EFT",
     titulo: "Escape from Tarkov",
-    imagen: "http://localhost:5000/assets/img/FPS/02.jpg",
+    imagen: "https://backend-integradorbackend.vercel.app/assets/img/FPS/02.jpg",
     categoria: {
       nombre: "FPS",
       id: "FPS",
@@ -66,7 +66,7 @@ const initialProducts = [
   {
     id: "RON",
     titulo: "Ready or Not",
-    imagen: "http://localhost:5000/assets/img/FPS/03.jpg",
+    imagen: "https://backend-integradorbackend.vercel.app/assets/img/FPS/03.jpg",
     categoria: {
       nombre: "FPS",
       id: "FPS",
@@ -76,7 +76,7 @@ const initialProducts = [
   {
     id: "RS",
     titulo: "Rainbow Six Extraction",
-    imagen: "http://localhost:5000/assets/img/FPS/04.jpg",
+    imagen: "https://backend-integradorbackend.vercel.app/assets/img/FPS/04.jpg",
     categoria: {
       nombre: "FPS",
       id: "FPS",
@@ -86,7 +86,7 @@ const initialProducts = [
   {
     id: "AH",
     titulo: "Atomic Heart",
-    imagen: "http://localhost:5000/assets/img/FPS/05.jpg",
+    imagen: "https://backend-integradorbackend.vercel.app/assets/img/FPS/05.jpg",
     categoria: {
       nombre: "FPS",
       id: "FPS",
@@ -96,7 +96,7 @@ const initialProducts = [
   {
     id: "CPUNK",
     titulo: "Cyberpunk",
-    imagen: "http://localhost:5000/assets/img/OpenWorld/01.jpg",
+    imagen: "https://backend-integradorbackend.vercel.app/assets/img/OpenWorld/01.jpg",
     categoria: {
       nombre: "Mundo abierto",
       id: "OpenWorld",
@@ -106,7 +106,7 @@ const initialProducts = [
   {
     id: "FC5",
     titulo: "Far Cry 5",
-    imagen: "http://localhost:5000/assets/img/OpenWorld/02.jpg",
+    imagen: "https://backend-integradorbackend.vercel.app/assets/img/OpenWorld/02.jpg",
     categoria: {
       nombre: "Mundo abierto",
       id: "OpenWorld",
@@ -116,7 +116,7 @@ const initialProducts = [
   {
     id: "RDD2",
     titulo: "Red Dead Redemption 2",
-    imagen: "http://localhost:5000/assets/img/OpenWorld/03.jpg",
+    imagen: "https://backend-integradorbackend.vercel.app/assets/img/OpenWorld/03.jpg",
     categoria: {
       nombre: "Mundo abierto",
       id: "OpenWorld",
@@ -126,7 +126,7 @@ const initialProducts = [
   {
     id: "NMS",
     titulo: "No Man's Sky",
-    imagen: "http://localhost:5000/assets/img/OpenWorld/04.jpg",
+    imagen: "https://backend-integradorbackend.vercel.app/assets/img/OpenWorld/04.jpg",
     categoria: {
       nombre: "Mundo abierto",
       id: "OpenWorld",
@@ -136,7 +136,7 @@ const initialProducts = [
   {
     id: "GTAV",
     titulo: "Grand Theft Auto V",
-    imagen: "http://localhost:5000/assets/img/OpenWorld/05.jpg",
+    imagen: "https://backend-integradorbackend.vercel.app/assets/img/OpenWorld/05.jpg",
     categoria: {
       nombre: "Mundo abierto",
       id: "OpenWorld",
@@ -146,7 +146,7 @@ const initialProducts = [
   {
     id: "MCRAFT",
     titulo: "Minecraft",
-    imagen: "http://localhost:5000/assets/img/OpenWorld/06.jpg",
+    imagen: "https://backend-integradorbackend.vercel.app/assets/img/OpenWorld/06.jpg",
     categoria: {
       nombre: "Mundo abierto",
       id: "OpenWorld",
@@ -156,7 +156,7 @@ const initialProducts = [
   {
     id: "HZD",
     titulo: "Horizon Zero Dawn",
-    imagen: "http://localhost:5000/assets/img/OpenWorld/07.jpg",
+    imagen: "https://backend-integradorbackend.vercel.app/assets/img/OpenWorld/07.jpg",
     categoria: {
       nombre: "Mundo abierto",
       id: "OpenWorld",
@@ -166,7 +166,7 @@ const initialProducts = [
   {
     id: "TW3",
     titulo: "The Witcher 3: Wild Hunt",
-    imagen: "http://localhost:5000/assets/img/OpenWorld/08.jpg",
+    imagen: "https://backend-integradorbackend.vercel.app/assets/img/OpenWorld/08.jpg",
     categoria: {
       nombre: "Mundo abierto",
       id: "OpenWorld",
@@ -176,7 +176,7 @@ const initialProducts = [
   {
     id: "ITT",
     titulo: "It Takes Two",
-    imagen: "http://localhost:5000/assets/img/Adventure/01.jpg",
+    imagen: "https://backend-integradorbackend.vercel.app/assets/img/Adventure/01.jpg",
     categoria: {
       nombre: "Aventura",
       id: "Adventure",
@@ -186,7 +186,7 @@ const initialProducts = [
   {
     id: "SMR",
     titulo: "Spider-Man Remastered",
-    imagen: "http://localhost:5000/assets/img/Adventure/02.jpg",
+    imagen: "https://backend-integradorbackend.vercel.app/assets/img/Adventure/02.jpg",
     categoria: {
       nombre: "Aventura",
       id: "Adventure",
@@ -196,7 +196,7 @@ const initialProducts = [
   {
     id: "SMMM",
     titulo: "Spider-Man: Miles Morales",
-    imagen: "http://localhost:5000/assets/img/Adventure/03.jpg",
+    imagen: "https://backend-integradorbackend.vercel.app/assets/img/Adventure/03.jpg",
     categoria: {
       nombre: "Aventura",
       id: "Adventure",
@@ -206,7 +206,7 @@ const initialProducts = [
   {
     id: "RE3",
     titulo: "Resident Evil 3",
-    imagen: "http://localhost:5000/assets/img/Adventure/04.jpg",
+    imagen: "https://backend-integradorbackend.vercel.app/assets/img/Adventure/04.jpg",
     categoria: {
       nombre: "Aventura",
       id: "Adventure",
@@ -216,7 +216,7 @@ const initialProducts = [
   {
     id: "GOWR",
     titulo: "God of War Ragnarök",
-    imagen: "http://localhost:5000/assets/img/Adventure/05.jpg",
+    imagen: "https://backend-integradorbackend.vercel.app/assets/img/Adventure/05.jpg",
     categoria: {
       nombre: "Aventura",
       id: "Adventure",
