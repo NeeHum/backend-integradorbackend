@@ -6,6 +6,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { Product, productSchema } from "./routes/productsModel.mjs";
 import "dotenv/config";
+import cors from "cors";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -17,11 +18,15 @@ const BASE_URL = "backend-integradorbackend.vercel.app";
 const imagePath = path.join(__dirname, "../client/src/assets/img");
 app.use("/assets/img", express.static(imagePath));
 
-// Configurar CORS para permitir solicitudes desde cualquier origen
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  next();
-});
+
+
+const corsOptions = {
+  origin: "https://integrador-backend.vercel.app",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  allowedHeaders: "Content-Type,Authorization",
+};
+
+app.use(cors(corsOptions));
 
 
 app.use(bodyParser.json()); // Middleware
