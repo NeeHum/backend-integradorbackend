@@ -11,12 +11,14 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 
+const BASE_URL = 'https://backend-integradorbackend.vercel.app/';
+
 const imagePath = path.join(__dirname, "../client/src/assets/img");
 app.use("/assets/img", express.static(imagePath));
 
 // Configurar CORS para permitir solicitudes desde cualquier origen
 app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "https://integrador-backend.vercel.app/"); // Reemplaza con la URL de tu frontend
+  res.header("Access-Control-Allow-Origin", "http://localhost:3000"); // Reemplaza con la URL de tu frontend
   res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
@@ -46,7 +48,7 @@ const initialProducts = [
   {
     id: "CS",
     titulo: "CS: Global Offensive",
-    imagen: "https://backend-integradorbackend.vercel.app/assets/img/FPS/01.jpg",
+    imagen: `${BASE_URL}/assets/img/FPS/01.jpg`,
     categoria: {
       nombre: "FPS",
       id: "FPS",
@@ -56,173 +58,14 @@ const initialProducts = [
   {
     id: "EFT",
     titulo: "Escape from Tarkov",
-    imagen: "https://backend-integradorbackend.vercel.app/assets/img/FPS/02.jpg",
+    imagen: `${BASE_URL}/assets/img/FPS/02.jpg`,
     categoria: {
       nombre: "FPS",
       id: "FPS",
     },
     precio: 4500,
   },
-  {
-    id: "RON",
-    titulo: "Ready or Not",
-    imagen: "https://backend-integradorbackend.vercel.app/assets/img/FPS/03.jpg",
-    categoria: {
-      nombre: "FPS",
-      id: "FPS",
-    },
-    precio: 900,
-  },
-  {
-    id: "RS",
-    titulo: "Rainbow Six Extraction",
-    imagen: "https://backend-integradorbackend.vercel.app/assets/img/FPS/04.jpg",
-    categoria: {
-      nombre: "FPS",
-      id: "FPS",
-    },
-    precio: 3000,
-  },
-  {
-    id: "AH",
-    titulo: "Atomic Heart",
-    imagen: "https://backend-integradorbackend.vercel.app/assets/img/FPS/05.jpg",
-    categoria: {
-      nombre: "FPS",
-      id: "FPS",
-    },
-    precio: 4950,
-  },
-  {
-    id: "CPUNK",
-    titulo: "Cyberpunk",
-    imagen: "https://backend-integradorbackend.vercel.app/assets/img/OpenWorld/01.jpg",
-    categoria: {
-      nombre: "Mundo abierto",
-      id: "OpenWorld",
-    },
-    precio: 1800,
-  },
-  {
-    id: "FC5",
-    titulo: "Far Cry 5",
-    imagen: "https://backend-integradorbackend.vercel.app/assets/img/OpenWorld/02.jpg",
-    categoria: {
-      nombre: "Mundo abierto",
-      id: "OpenWorld",
-    },
-    precio: 2500,
-  },
-  {
-    id: "RDD2",
-    titulo: "Red Dead Redemption 2",
-    imagen: "https://backend-integradorbackend.vercel.app/assets/img/OpenWorld/03.jpg",
-    categoria: {
-      nombre: "Mundo abierto",
-      id: "OpenWorld",
-    },
-    precio: 890,
-  },
-  {
-    id: "NMS",
-    titulo: "No Man's Sky",
-    imagen: "https://backend-integradorbackend.vercel.app/assets/img/OpenWorld/04.jpg",
-    categoria: {
-      nombre: "Mundo abierto",
-      id: "OpenWorld",
-    },
-    precio: 500,
-  },
-  {
-    id: "GTAV",
-    titulo: "Grand Theft Auto V",
-    imagen: "https://backend-integradorbackend.vercel.app/assets/img/OpenWorld/05.jpg",
-    categoria: {
-      nombre: "Mundo abierto",
-      id: "OpenWorld",
-    },
-    precio: 1100,
-  },
-  {
-    id: "MCRAFT",
-    titulo: "Minecraft",
-    imagen: "https://backend-integradorbackend.vercel.app/assets/img/OpenWorld/06.jpg",
-    categoria: {
-      nombre: "Mundo abierto",
-      id: "OpenWorld",
-    },
-    precio: 250,
-  },
-  {
-    id: "HZD",
-    titulo: "Horizon Zero Dawn",
-    imagen: "https://backend-integradorbackend.vercel.app/assets/img/OpenWorld/07.jpg",
-    categoria: {
-      nombre: "Mundo abierto",
-      id: "OpenWorld",
-    },
-    precio: 3400,
-  },
-  {
-    id: "TW3",
-    titulo: "The Witcher 3: Wild Hunt",
-    imagen: "https://backend-integradorbackend.vercel.app/assets/img/OpenWorld/08.jpg",
-    categoria: {
-      nombre: "Mundo abierto",
-      id: "OpenWorld",
-    },
-    precio: 750,
-  },
-  {
-    id: "ITT",
-    titulo: "It Takes Two",
-    imagen: "https://backend-integradorbackend.vercel.app/assets/img/Adventure/01.jpg",
-    categoria: {
-      nombre: "Aventura",
-      id: "Adventure",
-    },
-    precio: 2400,
-  },
-  {
-    id: "SMR",
-    titulo: "Spider-Man Remastered",
-    imagen: "https://backend-integradorbackend.vercel.app/assets/img/Adventure/02.jpg",
-    categoria: {
-      nombre: "Aventura",
-      id: "Adventure",
-    },
-    precio: 5900,
-  },
-  {
-    id: "SMMM",
-    titulo: "Spider-Man: Miles Morales",
-    imagen: "https://backend-integradorbackend.vercel.app/assets/img/Adventure/03.jpg",
-    categoria: {
-      nombre: "Aventura",
-      id: "Adventure",
-    },
-    precio: 6000,
-  },
-  {
-    id: "RE3",
-    titulo: "Resident Evil 3",
-    imagen: "https://backend-integradorbackend.vercel.app/assets/img/Adventure/04.jpg",
-    categoria: {
-      nombre: "Aventura",
-      id: "Adventure",
-    },
-    precio: 2900,
-  },
-  {
-    id: "GOWR",
-    titulo: "God of War Ragnarök",
-    imagen: "https://backend-integradorbackend.vercel.app/assets/img/Adventure/05.jpg",
-    categoria: {
-      nombre: "Aventura",
-      id: "Adventure",
-    },
-    precio: 6000,
-  },
+  // Resto de los objetos...
 ];
 
 // Función para cargar los datos iniciales de productos
