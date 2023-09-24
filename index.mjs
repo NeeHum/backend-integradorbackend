@@ -8,10 +8,6 @@ import { Product, productSchema } from "./routes/productsModel.mjs";
 import "dotenv/config";
 import cors from "cors";
 
-app.use(cors());
-
-app.use(bodyParser.json());
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -21,6 +17,11 @@ const BASE_URL = "backend-integradorbackend.vercel.app";
 
 const imagePath = path.join(__dirname, "../client/src/assets/img");
 app.use("/assets/img", express.static(imagePath));
+
+// Configura CORS para aceptar peticiones desde cualquier origen (*)
+app.use(cors());
+
+app.use(bodyParser.json()); // Middleware
 
 mongoose
   .connect(process.env.MONGODB_URI, {
