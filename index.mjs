@@ -1,17 +1,17 @@
-import express from 'express';
-import mongoose from 'mongoose';
-import bodyParser from 'body-parser';
-import User from './routes/userModel.mjs';
-import path from 'path';
-import { fileURLToPath } from 'url'; 
-import { Product, productSchema } from './routes/productsModel.mjs';
+import express from "express";
+import mongoose from "mongoose";
+import bodyParser from "body-parser";
+import User from "./routes/userModel.mjs";
+import path from "path";
+import { fileURLToPath } from "url";
+import { Product, productSchema } from "./routes/productsModel.mjs";
 
-const __filename = fileURLToPath(import.meta.url); 
-const __dirname = path.dirname(__filename); 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 
-const BASE_URL = 'https://backend-integradorbackend.vercel.app/';
+const BASE_URL = "https://backend-integradorbackend.vercel.app/";
 
 const imagePath = path.join(__dirname, "../client/src/assets/img");
 app.use("/assets/img", express.static(imagePath));
@@ -28,8 +28,9 @@ app.use(function (req, res, next) {
 
 app.use(bodyParser.json()); // Agrega el middleware para analizar el cuerpo de las solicitudes JSON
 
-const uri =
-  "mongodb+srv://superadmin:DD44H4584cFR@cluster0.qud3nn6.mongodb.net/RegisterUser?retryWrites=true&w=majority";
+import dotenv from "dotenv";
+dotenv.config();
+const uri = process.env.MONGODB_URI;
 
 mongoose
   .connect(uri, {
