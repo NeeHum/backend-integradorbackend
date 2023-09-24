@@ -12,7 +12,7 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 
-const BASE_URL = "https://backend-integradorbackend.vercel.app";
+const BASE_URL = "backend-integradorbackend.vercel.app";
 
 const imagePath = path.join(__dirname, "../client/src/assets/img");
 app.use("/assets/img", express.static(imagePath));
